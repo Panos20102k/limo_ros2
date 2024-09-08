@@ -29,6 +29,7 @@
             <robotNamespace>$(arg robot_namespace)</robotNamespace>
         </plugin>
 
+        <!-- This has wrong syntax probably (letters should be in snake case not camel case) -->
         <plugin name="four_diff_controller" filename="libgazebo_ros_ackerman.so">
             <updateRate>100.0</updateRate>
             <robotNamespace>$(arg robot_namespace)</robotNamespace>

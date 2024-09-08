@@ -18,7 +18,7 @@ def generate_launch_description():
   robot_name_in_model = 'limo_description'
   rviz_config_file_path = 'rviz/urdf.rviz'
   urdf_file_path = 'urdf/limo_four_diff.xacro'
-  world_file_path = 'worlds/neighborhood.world'
+  world_file_path = 'worlds/test_world.world'
  
   # Pose where we want to spawn the robot
   spawn_x_val = '0.0'
