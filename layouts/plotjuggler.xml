@@ -1,84 +1,101 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <root>
- <tabbed_widget parent="main_window" name="Main Window">
-  <Tab containers="1" tab_name="Path">
+ <tabbed_widget name="Main Window" parent="main_window">
+  <Tab tab_name="gt_path" containers="1">
    <Container>
-    <DockSplitter sizes="1" orientation="-" count="1">
+    <DockSplitter sizes="1" count="1" orientation="-">
      <DockArea name="...">
-      <plot flip_x="false" flip_y="false" style="Lines" mode="XYPlot">
-       <range right="5.418500" bottom="-2.763822" top="0.628522" left="-0.131823"/>
+      <plot mode="XYPlot" flip_y="false" style="Lines" flip_x="false">
+       <range bottom="-0.680858" right="2.254559" left="-0.057021" top="0.731974"/>
        <limitY/>
-       <curve curve_x="/odometry/pose/pose/position/x" color="#1f77b4" curve_y="/odometry/pose/pose/position/y" name="Path"/>
+       <curve color="#bcbd22" curve_x="/tf/odom/base_footprint/translation/x" name="/tf/odom/base_footprint/translation/[x;y]" curve_y="/tf/odom/base_footprint/translation/y"/>
       </plot>
      </DockArea>
     </DockSplitter>
    </Container>
   </Tab>
-  <Tab containers="1" tab_name="/cmd_vel">
+  <Tab tab_name="gt_pos" containers="1">
    <Container>
-    <DockSplitter sizes="0.5;0.5" orientation="-" count="2">
+    <DockSplitter sizes="0.5;0.5" count="2" orientation="-">
      <DockArea name="...">
-      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
-       <range right="23.293754" bottom="-0.012500" top="0.512500" left="0.000000"/>
+      <plot mode="TimeSeries" flip_y="false" style="Lines" flip_x="false">
+       <range bottom="-0.054232" right="7.605300" left="0.000078" top="2.251769"/>
        <limitY/>
-       <curve color="#d62728" name="/cmd_vel/linear/x"/>
-       <curve color="#1ac938" name="/cmd_vel/linear/y"/>
-       <curve color="#ff7f0e" name="/cmd_vel/linear/z"/>
+       <curve color="#d62728" name="/tf/odom/base_footprint/translation/x"/>
       </plot>
      </DockArea>
      <DockArea name="...">
-      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
-       <range right="23.293754" bottom="-1.050000" top="1.050000" left="0.000000"/>
+      <plot mode="TimeSeries" flip_y="false" style="Lines" flip_x="false">
+       <range bottom="-0.002221" right="7.605300" left="0.000078" top="0.053337"/>
        <limitY/>
-       <curve color="#f14cc1" name="/cmd_vel/angular/x"/>
-       <curve color="#9467bd" name="/cmd_vel/angular/y"/>
-       <curve color="#17becf" name="/cmd_vel/angular/z"/>
+       <curve color="#1ac938" name="/tf/odom/base_footprint/translation/y"/>
+       <curve color="#ff7f0e" name="/tf/odom/base_footprint/translation/z"/>
       </plot>
      </DockArea>
     </DockSplitter>
    </Container>
   </Tab>
-  <Tab containers="1" tab_name="ranges">
+  <Tab tab_name="vel" containers="1">
    <Container>
-    <DockSplitter sizes="1" orientation="-" count="1">
+    <DockSplitter sizes="0.5;0.5" count="2" orientation="-">
      <DockArea name="...">
-      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
-       <range right="23.293754" bottom="0.500718" top="9.108089" left="0.000000"/>
+      <plot mode="TimeSeries" flip_y="false" style="Lines" flip_x="false">
+       <range bottom="-0.012877" right="7.605300" left="0.000078" top="0.510295"/>
        <limitY/>
-       <curve color="#bcbd22" name="/scan/ranges[0]"/>
-       <curve color="#1f77b4" name="/scan/ranges[1]"/>
-       <curve color="#d62728" name="/scan/ranges[2]"/>
-       <curve color="#1ac938" name="/scan/ranges[3]"/>
-       <curve color="#ff7f0e" name="/scan/ranges[99]"/>
-       <curve color="#f14cc1" name="/scan/ranges[11]"/>
-       <curve color="#9467bd" name="/scan/ranges[21]"/>
-       <curve color="#17becf" name="/scan/ranges[30]"/>
-       <curve color="#bcbd22" name="/scan/ranges[39]"/>
-       <curve color="#1f77b4" name="/scan/ranges[4]"/>
-       <curve color="#d62728" name="/scan/ranges[51]"/>
-       <curve color="#1ac938" name="/scan/ranges[63]"/>
-       <curve color="#ff7f0e" name="/scan/ranges[75]"/>
-       <curve color="#f14cc1" name="/scan/ranges[87]"/>
-       <curve color="#9467bd" name="/scan/ranges[93]"/>
+       <curve color="#1f77b4" name="/odometry/twist/twist/linear/x"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot mode="TimeSeries" flip_y="false" style="Lines" flip_x="false">
+       <range bottom="-0.010114" right="7.605300" left="0.000078" top="0.002340"/>
+       <limitY/>
+       <curve color="#f14cc1" name="/odometry/twist/twist/linear/y"/>
+       <curve color="#9467bd" name="/odometry/twist/twist/linear/z"/>
       </plot>
      </DockArea>
     </DockSplitter>
    </Container>
   </Tab>
-  <Tab containers="1" tab_name="tf">
+  <Tab tab_name="odom_path" containers="1">
    <Container>
-    <DockSplitter sizes="1" orientation="-" count="1">
+    <DockSplitter sizes="1" count="1" orientation="-">
      <DockArea name="...">
-      <plot flip_x="false" flip_y="false" style="Lines" mode="TimeSeries">
-       <range right="23.293754" bottom="-11.604324" top="12.287268" left="0.000000"/>
+      <plot mode="XYPlot" flip_y="false" style="Lines" flip_x="false">
+       <range bottom="-0.679956" right="2.251769" left="-0.054232" top="0.731072"/>
        <limitY/>
-       <curve color="#bcbd22" name="/imu/data/linear_acceleration/x"/>
+       <curve color="#17becf" curve_x="/odometry/pose/pose/position/x" name="/odometry/pose/pose/position/[x;y]" curve_y="/odometry/pose/pose/position/y"/>
       </plot>
      </DockArea>
     </DockSplitter>
    </Container>
   </Tab>
-  <currentTabIndex index="0"/>
+  <Tab tab_name="odom_yaw" containers="1">
+   <Container>
+    <DockSplitter sizes="1" count="1" orientation="-">
+     <DockArea name="...">
+      <plot mode="TimeSeries" flip_y="false" style="Lines" flip_x="false">
+       <range bottom="-0.001146" right="7.605300" left="0.000078" top="0.064202"/>
+       <limitY/>
+       <curve color="#bcbd22" name="/odometry/pose/pose/orientation/z"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab tab_name="gt_yaw" containers="1">
+   <Container>
+    <DockSplitter sizes="1" count="1" orientation="-">
+     <DockArea name="...">
+      <plot mode="TimeSeries" flip_y="false" style="Lines" flip_x="false">
+       <range bottom="-0.001146" right="7.605300" left="0.000078" top="0.064202"/>
+       <limitY/>
+       <curve color="#1f77b4" name="/tf/odom/base_footprint/rotation/z"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <currentTabIndex index="2"/>
  </tabbed_widget>
  <use_relative_time_offset enabled="1"/>
  <!-- - - - - - - - - - - - - - - -->
@@ -94,7 +111,7 @@
    <max_array_size value="100"/>
    <boolean_strings_to_number value="true"/>
    <remove_suffix_from_strings value="true"/>
-   <selected_topics value=""/>
+   <selected_topics value="/clock;/cmd_vel;/events/write_split;/goal_pose;/imu/data;/initialpose;/joint_states;/odometry;/parameter_events;/performance_metrics;/robot_description;/rosout;/scan;/tf;/tf_static"/>
   </plugin>
   <plugin ID="DataLoad ULog"/>
   <plugin ID="ROS2 Topic Subscriber">
@@ -103,7 +120,7 @@
    <max_array_size value="100"/>
    <boolean_strings_to_number value="true"/>
    <remove_suffix_from_strings value="true"/>
-   <selected_topics value="/cmd_vel;/goal_pose;/imu/data;/initialpose;/joint_states;/odometry;/scan;/tf;/tf_static"/>
+   <selected_topics value="/cmd_vel"/>
   </plugin>
   <plugin ID="UDP Server"/>
   <plugin ID="WebSocket Server"/>
